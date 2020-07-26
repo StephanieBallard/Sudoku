@@ -14,8 +14,16 @@ class GameBoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        navigationItem.leftBarButtonItem?.tintColor = .white
 
         numberedButtonsCornerRadius()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     @IBAction func oneButtonTapped(_ sender: UIButton) {
@@ -43,6 +51,10 @@ class GameBoardViewController: UIViewController {
     }
     
     @IBAction func nineButtonTapped(_ sender: UIButton) {
+    }
+   
+    @IBAction func changeDifficultyButtonTapped(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
     }
     
     private func numberedButtonsCornerRadius() {

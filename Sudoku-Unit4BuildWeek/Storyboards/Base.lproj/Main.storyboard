@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BQ2-YN-pGi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="inr-8y-ZZh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,16 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightFadeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5sU-FH-YFQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sudoku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0m-ur-pkT">
-                                <rect key="frame" x="20" y="84" width="374" height="54.5"/>
+                                <rect key="frame" x="20" y="128" width="374" height="54.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="skp-R8-oKs">
-                                <rect key="frame" x="20" y="198.5" width="374" height="142"/>
+                                <rect key="frame" x="20" y="242.5" width="374" height="142"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFv-Es-wiM" userLabel="Easy Button">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
@@ -36,7 +36,7 @@
                                         </state>
                                         <connections>
                                             <action selector="easyButtonTapped:" destination="BQ2-YN-pGi" eventType="touchUpInside" id="Bmh-6d-8FA"/>
-                                            <segue destination="8lt-Fb-UiC" kind="show" id="Icx-GK-08r"/>
+                                            <segue destination="8lt-Fb-UiC" kind="show" id="aU9-P2-gs5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ms-Zi-37K">
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2020-07-24 at 10.49.15 PM" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-fP-NqG">
-                                <rect key="frame" x="40" y="380.5" width="342" height="324"/>
+                                <rect key="frame" x="40" y="424.5" width="342" height="324"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="324" id="qg6-fc-rOg"/>
                                 </constraints>
@@ -102,6 +102,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a3m-fz-fCd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="S8k-fR-QRu"/>
                     <connections>
                         <outlet property="easyButton" destination="uFv-Es-wiM" id="kbZ-xc-Osz"/>
                         <outlet property="hardButton" destination="oMH-YR-TDE" id="Pal-6g-UyV"/>
@@ -110,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqb-NK-TsD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="90"/>
+            <point key="canvasLocation" x="957.97101449275374" y="89.732142857142847"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s8N-zv-rWH">
@@ -155,21 +156,22 @@ Every puzzle has just one correct solution.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S80-KJ-x9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721.73913043478262" y="89.732142857142847"/>
+            <point key="canvasLocation" x="1631.8840579710147" y="89.732142857142847"/>
         </scene>
         <!--Game Board View Controller-->
         <scene sceneID="1eZ-WY-aEL">
             <objects>
-                <viewController id="8lt-Fb-UiC" customClass="GameBoardViewController" customModule="Sudoku_Unit4BuildWeek" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8lt-Fb-UiC" customClass="GameBoardViewController" customModule="Sudoku_Unit4BuildWeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hi1-rJ-ii7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightFadeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Rgr-LK-4wo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LightFadeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Rgr-LK-4wo">
                                 <rect key="frame" x="0.0" y="-44" width="1000" height="1000"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ERG-xd-auV">
-                                <rect key="frame" x="32" y="618" width="343" height="30"/>
+                                <rect key="frame" x="35.5" y="618" width="343" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kjh-Ko-J4m">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
@@ -270,7 +272,7 @@ Every puzzle has just one correct solution.</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sudoku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmh-vP-dD4">
-                                <rect key="frame" x="20" y="20" width="367" height="54.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="54.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -278,19 +280,21 @@ Every puzzle has just one correct solution.</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="ERG-xd-auV" secondAttribute="trailing" constant="32" id="4F4-KZ-OFN"/>
-                            <constraint firstItem="ERG-xd-auV" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="32" id="5cC-UH-aEK"/>
-                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="bottom" secondItem="ERG-xd-auV" secondAttribute="bottom" constant="160" id="6dN-d7-2eo"/>
-                            <constraint firstItem="Kmh-vP-dD4" firstAttribute="centerX" secondItem="hi1-rJ-ii7" secondAttribute="centerX" id="6fa-Nn-hFn"/>
-                            <constraint firstItem="Kmh-vP-dD4" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="20" id="FFy-lz-L1c"/>
-                            <constraint firstItem="Rgr-LK-4wo" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" id="GyP-qm-BB2"/>
-                            <constraint firstItem="Kmh-vP-dD4" firstAttribute="top" secondItem="1G6-Hs-EPe" secondAttribute="top" constant="20" id="U7j-ga-US8"/>
-                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="ERG-xd-auV" secondAttribute="trailing" constant="32" id="ViZ-4f-m2Y"/>
-                            <constraint firstItem="Rgr-LK-4wo" firstAttribute="top" secondItem="1G6-Hs-EPe" secondAttribute="top" constant="-44" id="so3-d0-V9W"/>
+                            <constraint firstItem="Kmh-vP-dD4" firstAttribute="top" secondItem="1G6-Hs-EPe" secondAttribute="top" constant="20" id="0xM-Ah-vwb"/>
+                            <constraint firstItem="Kmh-vP-dD4" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="20" id="Ox6-Q1-Epu"/>
+                            <constraint firstItem="ERG-xd-auV" firstAttribute="centerX" secondItem="hi1-rJ-ii7" secondAttribute="centerX" id="QTX-Y5-JAg"/>
+                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="Kmh-vP-dD4" secondAttribute="trailing" constant="20" id="Xeb-F4-7c8"/>
+                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="bottom" secondItem="ERG-xd-auV" secondAttribute="bottom" constant="214" id="joQ-MP-dpe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1G6-Hs-EPe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vXK-br-JEF"/>
+                    <navigationItem key="navigationItem" id="vXK-br-JEF">
+                        <barButtonItem key="leftBarButtonItem" title="Change Difficulty" id="A7b-QJ-lYn">
+                            <connections>
+                                <action selector="changeDifficultyButtonTapped:" destination="8lt-Fb-UiC" id="ML5-xo-XUk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outletCollection property="numberButtons" destination="kjh-Ko-J4m" collectionClass="NSMutableArray" id="B5d-QQ-FK5"/>
                         <outletCollection property="numberButtons" destination="hUa-U5-8XK" collectionClass="NSMutableArray" id="hgQ-D9-rWa"/>
@@ -305,7 +309,25 @@ Every puzzle has just one correct solution.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNe-w5-Hu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424.6376811594205" y="89.732142857142847"/>
+            <point key="canvasLocation" x="2344.9275362318845" y="89.732142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xGV-4x-g2z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="inr-8y-ZZh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Pr-yl-WYt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BQ2-YN-pGi" kind="relationship" relationship="rootViewController" id="68j-L7-hUU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6p-KO-Bdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="89.732142857142847"/>
         </scene>
     </scenes>
     <resources>

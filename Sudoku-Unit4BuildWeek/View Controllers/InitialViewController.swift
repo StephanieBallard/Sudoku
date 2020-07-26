@@ -19,15 +19,34 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        playWinSound()
+    
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.navigationBar.barTintColor = .clear
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
         
+        playWinSound()
+        difficultyButtonsCornerRadii()
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    private func difficultyButtonsCornerRadii() {
         // MARK: - Rounded Buttons -
         easyButton.layer.cornerRadius = 20
         mediumButton.layer.cornerRadius = 20
         hardButton.layer.cornerRadius = 20
-        
-        // Do any additional setup after loading the view.
     }
     
     func playWinSound() {
