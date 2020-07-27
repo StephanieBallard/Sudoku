@@ -104,6 +104,6 @@ extension GameBoardViewController: UICollectionViewDelegate {
 
 extension GameBoardViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return CGSize(width: collectionView.bounds.width / 9, height: collectionView.bounds.width / 9)
     }
 }

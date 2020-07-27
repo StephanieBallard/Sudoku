@@ -15,6 +15,7 @@
 		5A3597A624CD34E80008301F /* Sudoku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A3597A424CD34E80008301F /* Sudoku.xcdatamodeld */; };
 		5A3597AC24CD37EA0008301F /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3597AB24CD37EA0008301F /* GameBoardViewController.swift */; };
 		5A3597AE24CD39890008301F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3597AD24CD39890008301F /* CoreDataStack.swift */; };
+		5A65386924CE6F6B00088F91 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A65386824CE6F6B00088F91 /* GameCollectionViewCell.swift */; };
 		5A672D5924CC567B00B51822 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A672D5824CC567B00B51822 /* InitialViewController.swift */; };
 		5AB8375624CC5CE000FE9F38 /* Ta Da-SoundBible.com-1884170640.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8375524CC5CE000FE9F38 /* Ta Da-SoundBible.com-1884170640.mp3 */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		5A3597A524CD34E80008301F /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		5A3597AB24CD37EA0008301F /* GameBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameBoardViewController.swift; path = "Sudoku-Unit4BuildWeek/View Controllers/GameBoardViewController.swift"; sourceTree = SOURCE_ROOT; };
 		5A3597AD24CD39890008301F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		5A65386824CE6F6B00088F91 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		5A672D5824CC567B00B51822 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5AB8375524CC5CE000FE9F38 /* Ta Da-SoundBible.com-1884170640.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ta Da-SoundBible.com-1884170640.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				5A3597A724CD35250008301F /* CoreData */,
-				5A3597A824CD35330008301F /* Storyboards */,
+				5A65386524CE6F2000088F91 /* View */,
 				5A3597A924CD37960008301F /* View Controllers */,
 				5A3597AA24CD37A40008301F /* Resources */,
 				5A0BC2E424CBF77000BD9782 /* Info.plist */,
@@ -103,12 +105,21 @@
 		5A3597AA24CD37A40008301F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5AB8375424CC5CBB00FE9F38 /* Sounds */,
 				5A0BC2D824CBF76F00BD9782 /* SceneDelegate.swift */,
 				5A0BC2D624CBF76F00BD9782 /* AppDelegate.swift */,
 				5A0BC2DF24CBF77000BD9782 /* Assets.xcassets */,
+				5AB8375424CC5CBB00FE9F38 /* Sounds */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5A65386524CE6F2000088F91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A65386824CE6F6B00088F91 /* GameCollectionViewCell.swift */,
+				5A3597A824CD35330008301F /* Storyboards */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5AB8375424CC5CBB00FE9F38 /* Sounds */ = {
@@ -194,6 +205,7 @@
 				5A672D5924CC567B00B51822 /* InitialViewController.swift in Sources */,
 				5A0BC2D724CBF76F00BD9782 /* AppDelegate.swift in Sources */,
 				5A3597A624CD34E80008301F /* Sudoku.xcdatamodeld in Sources */,
+				5A65386924CE6F6B00088F91 /* GameCollectionViewCell.swift in Sources */,
 				5A3597AE24CD39890008301F /* CoreDataStack.swift in Sources */,
 				5A3597AC24CD37EA0008301F /* GameBoardViewController.swift in Sources */,
 				5A0BC2D924CBF76F00BD9782 /* SceneDelegate.swift in Sources */,
