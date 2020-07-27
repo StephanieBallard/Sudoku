@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -166,12 +167,11 @@ Every puzzle has just one correct solution.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LightFadeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Rgr-LK-4wo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LightFadeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Rgr-LK-4wo">
                                 <rect key="frame" x="0.0" y="-44" width="1000" height="1000"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ERG-xd-auV">
-                                <rect key="frame" x="35.5" y="618" width="343" height="30"/>
+                                <rect key="frame" x="35.5" y="632" width="343" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kjh-Ko-J4m">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
@@ -277,14 +277,60 @@ Every puzzle has just one correct solution.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-yc-nvf">
+                                <rect key="frame" x="20" y="192.5" width="374" height="419.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V66-Wq-kdC">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="estimatedItemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="f16-hN-eJ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2m0-lB-IzI">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wsQ-3y-E6J">
+                                <rect key="frame" x="20" y="163" width="97" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVk-Rh-2CA">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWe-JW-1Wb">
+                                        <rect key="frame" x="51" y="0.0" width="46" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Kmh-vP-dD4" firstAttribute="top" secondItem="1G6-Hs-EPe" secondAttribute="top" constant="20" id="0xM-Ah-vwb"/>
+                            <constraint firstItem="7Vf-yc-nvf" firstAttribute="top" secondItem="Kmh-vP-dD4" secondAttribute="bottom" constant="30" id="3Xv-XP-2so"/>
+                            <constraint firstItem="Rgr-LK-4wo" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" id="9sH-e7-Hgc"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Rgr-LK-4wo" secondAttribute="bottom" constant="-94" id="KmJ-MT-KeC"/>
+                            <constraint firstItem="ERG-xd-auV" firstAttribute="top" secondItem="7Vf-yc-nvf" secondAttribute="bottom" constant="20" id="MSV-GG-xAe"/>
+                            <constraint firstItem="wsQ-3y-E6J" firstAttribute="top" secondItem="Kmh-vP-dD4" secondAttribute="bottom" constant="0.5" id="O5m-fa-nuu"/>
                             <constraint firstItem="Kmh-vP-dD4" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="20" id="Ox6-Q1-Epu"/>
                             <constraint firstItem="ERG-xd-auV" firstAttribute="centerX" secondItem="hi1-rJ-ii7" secondAttribute="centerX" id="QTX-Y5-JAg"/>
+                            <constraint firstItem="wsQ-3y-E6J" firstAttribute="leading" secondItem="Kmh-vP-dD4" secondAttribute="leading" id="UKJ-mC-Ht6"/>
+                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="7Vf-yc-nvf" secondAttribute="trailing" constant="20" id="XMZ-PB-mr2"/>
                             <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="Kmh-vP-dD4" secondAttribute="trailing" constant="20" id="Xeb-F4-7c8"/>
-                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="bottom" secondItem="ERG-xd-auV" secondAttribute="bottom" constant="214" id="joQ-MP-dpe"/>
+                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="bottom" secondItem="ERG-xd-auV" secondAttribute="bottom" constant="200" id="joQ-MP-dpe"/>
+                            <constraint firstItem="7Vf-yc-nvf" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="20" id="xUw-dM-AdK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1G6-Hs-EPe"/>
                     </view>
@@ -296,6 +342,8 @@ Every puzzle has just one correct solution.</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="7Vf-yc-nvf" id="OI4-e0-9T5"/>
+                        <outlet property="timerLabel" destination="TWe-JW-1Wb" id="gdB-lZ-0AU"/>
                         <outletCollection property="numberButtons" destination="kjh-Ko-J4m" collectionClass="NSMutableArray" id="B5d-QQ-FK5"/>
                         <outletCollection property="numberButtons" destination="hUa-U5-8XK" collectionClass="NSMutableArray" id="hgQ-D9-rWa"/>
                         <outletCollection property="numberButtons" destination="q3d-G9-szu" collectionClass="NSMutableArray" id="TDF-NR-SPF"/>
