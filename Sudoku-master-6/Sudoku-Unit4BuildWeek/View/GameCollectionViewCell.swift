@@ -9,11 +9,8 @@
 import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
-    
     override func awakeFromNib() {
-        
-//        translatesAutoresizingMaskIntoConstraints = false
-        self.layer.borderWidth = -1
+        self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
         
         print(self.bounds.width)

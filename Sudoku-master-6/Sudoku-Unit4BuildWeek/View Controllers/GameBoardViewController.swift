@@ -17,9 +17,6 @@ class GameBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(collectionView.bounds.width)
-        print(collectionView.bounds.height)
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -107,6 +104,6 @@ extension GameBoardViewController: UICollectionViewDelegate {
 
 extension GameBoardViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width / 9) - 1, height: (collectionView.bounds.width / 9) - 1)
+        return CGSize(width: (collectionView.bounds.width / 9) - 1, height: (collectionView.bounds.width / 9) + 1)
     }
 }
