@@ -10,6 +10,8 @@ import UIKit
 
 class GameBoardViewController: UIViewController {
 
+    let gameController = GameController()
+    
     @IBOutlet var numberButtons: [UIButton]!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
@@ -27,8 +29,9 @@ class GameBoardViewController: UIViewController {
         numberedButtonsCornerRadius()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        collectionView.reloadData()
     }
     
     @IBAction func oneButtonTapped(_ sender: UIButton) {
@@ -84,15 +87,20 @@ class GameBoardViewController: UIViewController {
 extension GameBoardViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 9
+        return gameController.gamePieces.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return gameController.gamePieces[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath)
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as? GameCollectionViewCell else { return UICollectionViewCell() }
+        
+        let gamePiece = gameController.gamePieces[indexPath.section][indexPath.item]
+        cell.gamePiece = gamePiece
+        
+        return cell
     }
 }
 

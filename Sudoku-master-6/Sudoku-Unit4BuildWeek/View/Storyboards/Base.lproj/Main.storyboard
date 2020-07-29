@@ -310,8 +310,23 @@ Every puzzle has just one correct solution.</string>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2m0-lB-IzI">
                                             <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwx-s5-Qjn">
+                                                    <rect key="frame" x="12" y="6" width="12.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xwx-s5-Qjn" firstAttribute="centerX" secondItem="2m0-lB-IzI" secondAttribute="centerX" id="50T-PC-cpK"/>
+                                                <constraint firstItem="Xwx-s5-Qjn" firstAttribute="centerY" secondItem="2m0-lB-IzI" secondAttribute="centerY" id="ylc-Pf-Ih8"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="gamePieceTextLabel" destination="Xwx-s5-Qjn" id="dLL-ue-xSN"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

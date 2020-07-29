@@ -9,12 +9,26 @@
 import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var gamePieceTextLabel: UILabel!
+    
+    var gamePiece: GamePiece? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     override func awakeFromNib() {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
         
         print(self.bounds.width)
         print(self.bounds.height)
+    }
+    
+    private func updateViews() {
+        guard let gamePiece = gamePiece else { return }
+        gamePieceTextLabel.text = gamePiece.number
     }
     
 }

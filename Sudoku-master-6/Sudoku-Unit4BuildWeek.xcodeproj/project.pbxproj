@@ -12,6 +12,10 @@
 		5A0BC2DE24CBF76F00BD9782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0BC2DC24CBF76F00BD9782 /* Main.storyboard */; };
 		5A0BC2E024CBF77000BD9782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0BC2DF24CBF77000BD9782 /* Assets.xcassets */; };
 		5A0BC2E324CBF77000BD9782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0BC2E124CBF77000BD9782 /* LaunchScreen.storyboard */; };
+		5A0D190824D1207C00DCB7B5 /* GamePieces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D190724D1207C00DCB7B5 /* GamePieces.swift */; };
+		5A0D190C24D1226F00DCB7B5 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D190B24D1226F00DCB7B5 /* GameController.swift */; };
+		5A0D190E24D13B7800DCB7B5 /* Sudoku.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A0D190D24D13B7800DCB7B5 /* Sudoku.plist */; };
+		5A0D191024D155E700DCB7B5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0D190F24D155E700DCB7B5 /* ArrayExtension.swift */; };
 		5A3597A624CD34E80008301F /* Sudoku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A3597A424CD34E80008301F /* Sudoku.xcdatamodeld */; };
 		5A3597AC24CD37EA0008301F /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3597AB24CD37EA0008301F /* GameBoardViewController.swift */; };
 		5A3597AE24CD39890008301F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3597AD24CD39890008301F /* CoreDataStack.swift */; };
@@ -28,6 +32,10 @@
 		5A0BC2DF24CBF77000BD9782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A0BC2E224CBF77000BD9782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A0BC2E424CBF77000BD9782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0D190724D1207C00DCB7B5 /* GamePieces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePieces.swift; sourceTree = "<group>"; };
+		5A0D190B24D1226F00DCB7B5 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		5A0D190D24D13B7800DCB7B5 /* Sudoku.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sudoku.plist; sourceTree = "<group>"; };
+		5A0D190F24D155E700DCB7B5 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		5A3597A524CD34E80008301F /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		5A3597AB24CD37EA0008301F /* GameBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameBoardViewController.swift; path = "Sudoku-Unit4BuildWeek/View Controllers/GameBoardViewController.swift"; sourceTree = SOURCE_ROOT; };
 		5A3597AD24CD39890008301F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -67,12 +75,31 @@
 			isa = PBXGroup;
 			children = (
 				5A3597A724CD35250008301F /* CoreData */,
+				5A0D190924D1208400DCB7B5 /* Model */,
+				5A0D190A24D1224E00DCB7B5 /* GameController */,
 				5A65386524CE6F2000088F91 /* View */,
 				5A3597A924CD37960008301F /* View Controllers */,
 				5A3597AA24CD37A40008301F /* Resources */,
 				5A0BC2E424CBF77000BD9782 /* Info.plist */,
 			);
 			path = "Sudoku-Unit4BuildWeek";
+			sourceTree = "<group>";
+		};
+		5A0D190924D1208400DCB7B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D190724D1207C00DCB7B5 /* GamePieces.swift */,
+				5A0D190F24D155E700DCB7B5 /* ArrayExtension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A0D190A24D1224E00DCB7B5 /* GameController */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D190B24D1226F00DCB7B5 /* GameController.swift */,
+			);
+			path = GameController;
 			sourceTree = "<group>";
 		};
 		5A3597A724CD35250008301F /* CoreData */ = {
@@ -105,6 +132,7 @@
 		5A3597AA24CD37A40008301F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5A0D190D24D13B7800DCB7B5 /* Sudoku.plist */,
 				5A0BC2D824CBF76F00BD9782 /* SceneDelegate.swift */,
 				5A0BC2D624CBF76F00BD9782 /* AppDelegate.swift */,
 				5A0BC2DF24CBF77000BD9782 /* Assets.xcassets */,
@@ -188,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0D190E24D13B7800DCB7B5 /* Sudoku.plist in Resources */,
 				5AB8375624CC5CE000FE9F38 /* Ta Da-SoundBible.com-1884170640.mp3 in Resources */,
 				5A0BC2E324CBF77000BD9782 /* LaunchScreen.storyboard in Resources */,
 				5A0BC2E024CBF77000BD9782 /* Assets.xcassets in Resources */,
@@ -206,8 +235,11 @@
 				5A0BC2D724CBF76F00BD9782 /* AppDelegate.swift in Sources */,
 				5A3597A624CD34E80008301F /* Sudoku.xcdatamodeld in Sources */,
 				5A65386924CE6F6B00088F91 /* GameCollectionViewCell.swift in Sources */,
+				5A0D190C24D1226F00DCB7B5 /* GameController.swift in Sources */,
+				5A0D191024D155E700DCB7B5 /* ArrayExtension.swift in Sources */,
 				5A3597AE24CD39890008301F /* CoreDataStack.swift in Sources */,
 				5A3597AC24CD37EA0008301F /* GameBoardViewController.swift in Sources */,
+				5A0D190824D1207C00DCB7B5 /* GamePieces.swift in Sources */,
 				5A0BC2D924CBF76F00BD9782 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
