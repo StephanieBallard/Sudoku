@@ -9,9 +9,8 @@
 import Foundation
 
 struct GamePiece {
-    var number: String
-    var x: Int
+    var number: String?
     var y: Int
+    var x: Int
+    var brothers: [(Int, Int)] = []
 }
-
-
