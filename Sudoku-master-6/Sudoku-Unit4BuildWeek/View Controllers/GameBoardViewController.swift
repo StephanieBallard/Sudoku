@@ -66,54 +66,63 @@ class GameBoardViewController: UIViewController {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "1")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func twoButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "2")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func threeButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "3")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func fourButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "4")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func fiveButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "5")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func sixButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "6")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func sevenButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "7")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func eightButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "8")
         collectionView.reloadData()
+        checkFinnished()
     }
     
     @IBAction func nineButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "9")
         collectionView.reloadData()
+        checkFinnished()
     }
    
     @IBAction func changeDifficultyButtonTapped(_ sender: UIBarButtonItem) {
@@ -122,6 +131,14 @@ class GameBoardViewController: UIViewController {
     
     
     // MARK: - Helper Methods -
+    private func checkFinnished() {
+        if gameController.isFilled() {
+            //Do Alert
+            //Sound
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
 

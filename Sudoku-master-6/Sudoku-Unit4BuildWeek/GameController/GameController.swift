@@ -14,6 +14,11 @@ class GameController {
     var someArrayName = [GamePiece]()
     var testBoards: [[[Int]]] = []
     var sameNumbers = Dictionary<String, [(Int, Int)]>()
+    var filledPieces: Int = 0 {
+        didSet {
+            print("\(filledPieces)")
+        }
+    }
     
     init() {
         loadFromPersistentStore()
@@ -28,6 +33,10 @@ class GameController {
             print("Brothers: \(String(describing: gamePieces[section][item].number))")
         }
 
+    }
+    
+    func isFilled() -> Bool {
+        return filledPieces == 81
     }
     
     func loadFromPersistentStore() {
@@ -51,8 +60,10 @@ class GameController {
                 var gamePiece: GamePiece!
                 if first[y][x] == 0 {
                     gamePiece = GamePiece(number: nil, y: y, x: x)
+                    filledPieces += 1
                 } else {
                     gamePiece = GamePiece(number: String(first[y][x]), y: y, x: x)
+                    filledPieces += 1
                 }
                 switch gamePiece.number {
                 case "1":
@@ -102,6 +113,7 @@ class GameController {
         let x = indexPath.item
         if gamePieces[y][x].number == nil {
             gamePieces[y][x].number = number
+            filledPieces += 1
         } else {
             
         }
