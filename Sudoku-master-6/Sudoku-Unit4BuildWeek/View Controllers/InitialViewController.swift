@@ -15,7 +15,7 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var mediumButton: UIButton!
     @IBOutlet weak var hardButton: UIButton!
     
-    var audioPlayer: AVAudioPlayer!
+//    var audioPlayer: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class InitialViewController: UIViewController {
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        playWinSound()
+//        playWinSound()
         difficultyButtonsCornerRadii()
         
         
@@ -49,18 +49,18 @@ class InitialViewController: UIViewController {
         hardButton.layer.cornerRadius = 20
     }
     
-    func playWinSound() {
-        let winSound = Bundle.main.path(forResource: "Ta Da-SoundBible.com-1884170640", ofType: "mp3")
-            
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: winSound!))
-            } catch {
-                print(error)
-            }
-        }
+//    func playWinSound() {
+//        let winSound = Bundle.main.path(forResource: "Ta Da-SoundBible.com-1884170640", ofType: "mp3")
+//
+//            do {
+//                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: winSound!))
+//            } catch {
+//                print(error)
+//            }
+//        }
 
     @IBAction func easyButtonTapped(_ sender: UIButton) {
-        audioPlayer.play()
+//        audioPlayer.play()
     
     }
     @IBAction func mediumButtonTapped(_ sender: UIButton) {

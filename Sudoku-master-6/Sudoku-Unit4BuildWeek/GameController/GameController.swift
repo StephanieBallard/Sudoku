@@ -36,7 +36,7 @@ class GameController {
     }
     
     func isFilled() -> Bool {
-        return filledPieces == 81
+        return filledPieces == 99
     }
     
     func loadFromPersistentStore() {
@@ -114,8 +114,6 @@ class GameController {
         if gamePieces[y][x].number == nil {
             gamePieces[y][x].number = number
             filledPieces += 1
-        } else {
-            
         }
     }
 }

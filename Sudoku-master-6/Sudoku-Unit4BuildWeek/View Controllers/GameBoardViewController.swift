@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameBoardViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class GameBoardViewController: UIViewController {
     
     let gameController = GameController()
     var timer: Timer?
-
+    var audioPlayer: AVAudioPlayer!
     var elapsedSeconds: Int = 0
     
         
@@ -69,63 +70,63 @@ class GameBoardViewController: UIViewController {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "1")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func twoButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "2")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func threeButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "3")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func fourButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "4")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func fiveButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "5")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func sixButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "6")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func sevenButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "7")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func eightButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "8")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
     
     @IBAction func nineButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath else { return }
         gameController.selectedCell(indexPath: indexPath, number: "9")
         collectionView.reloadData()
-        checkFinnished()
+        checkFinished()
     }
    
     @IBAction func changeDifficultyButtonTapped(_ sender: UIBarButtonItem) {
@@ -154,12 +155,22 @@ class GameBoardViewController: UIViewController {
         }
     }
         
-    private func checkFinnished() {
+    private func checkFinished() {
         if gameController.isFilled() {
-            //Do Alert
-            //Sound
-            navigationController?.popViewController(animated: true)
+            
+            playWinSound()
+            let alert = UIAlertController(title: "YOU WON!", message: "Would you like to play again?", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.returnToFrontOfNavigationStack() }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+            self.present(alert, animated: true)
         }
+    }
+    
+    @objc func returnToFrontOfNavigationStack() {
+        navigationController?.popViewController(animated: true)
     }
     
     private func numberedButtonsCornerRadius() {
@@ -172,6 +183,18 @@ class GameBoardViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.leftBarButtonItem?.tintColor = .white
+    }
+    
+    private func playWinSound() {
+    let winSound = Bundle.main.path(forResource: "Ta Da-SoundBible.com-1884170640", ofType: "mp3")
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: winSound!))
+        } catch {
+            print(error)
+        }
+        
+        audioPlayer.play()
     }
     
     /*

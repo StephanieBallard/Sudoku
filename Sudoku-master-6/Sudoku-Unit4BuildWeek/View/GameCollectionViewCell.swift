@@ -19,11 +19,11 @@ class GameCollectionViewCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.black.cgColor
         
-        print(self.bounds.width)
-        print(self.bounds.height)
+//        print(self.bounds.width)
+//        print(self.bounds.height)
     }
     
     private func updateViews() {
