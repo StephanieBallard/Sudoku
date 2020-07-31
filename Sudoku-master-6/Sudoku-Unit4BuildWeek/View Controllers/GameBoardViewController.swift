@@ -15,16 +15,7 @@ class GameBoardViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     let gameController = GameController()
-    lazy var timer: Timer = {
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector ("fireTimer"), userInfo: nil, repeats: true)
-        return timer
-    }()
-    
-    @objc private func fireTimer() {
-        elapsedSeconds += 1
-        let timerText = "\(elapsedSeconds/60) : \(elapsedSeconds % 60)"
-        self.timerLabel.text = timerText
-    }
+    var timer: Timer?
 
     var elapsedSeconds: Int = 0
     
@@ -70,7 +61,7 @@ class GameBoardViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        timer.invalidate()
+        timer?.invalidate()
     }
     
     // MARK: - Number Button Actions -
@@ -143,8 +134,24 @@ class GameBoardViewController: UIViewController {
     
     
     // MARK: - Helper Methods -
+//    @objc func fireTimer() {
+//        elapsedSeconds += 1
+//        let timerText = "\(elapsedSeconds/60) : \(elapsedSeconds % 60)"
+//        self.timerLabel.text = timerText
+//    }
+    @objc
+    func fireTimer() {
+        elapsedSeconds += 1
+    }
+    
     private func startTimer() {
-        timer.invalidate()
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+            if let self = self {
+                self.elapsedSeconds += 1
+                let timerText = "\(self.elapsedSeconds/60) : \(self.elapsedSeconds % 60)"
+                self.timerLabel.text = timerText
+            }
+        }
     }
         
     private func checkFinnished() {
