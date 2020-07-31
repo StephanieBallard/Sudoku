@@ -108,6 +108,7 @@
                         <outlet property="easyButton" destination="uFv-Es-wiM" id="kbZ-xc-Osz"/>
                         <outlet property="hardButton" destination="oMH-YR-TDE" id="Pal-6g-UyV"/>
                         <outlet property="mediumButton" destination="3ms-Zi-37K" id="gza-jo-MYJ"/>
+                        <outlet property="sudokuTextLabel" destination="S0m-ur-pkT" id="PNw-do-47h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqb-NK-TsD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -288,8 +289,8 @@ Every puzzle has just one correct solution.</string>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-yc-nvf">
-                                <rect key="frame" x="30" y="271" width="360" height="360"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-yc-nvf">
+                                <rect key="frame" x="30" y="271" width="354" height="354"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Vf-yc-nvf" secondAttribute="height" multiplier="1:1" id="7aY-C6-LFa"/>
@@ -330,7 +331,7 @@ Every puzzle has just one correct solution.</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sudoku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmh-vP-dD4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sudoku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoK-un-dSQ">
                                 <rect key="frame" x="30" y="138" width="354" height="54.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -339,23 +340,23 @@ Every puzzle has just one correct solution.</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Kmh-vP-dD4" firstAttribute="top" secondItem="1G6-Hs-EPe" secondAttribute="top" constant="50" id="45A-GC-PqI"/>
                             <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="ERG-xd-auV" secondAttribute="trailing" constant="35" id="5Bg-L6-2Sb"/>
                             <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="7Vf-yc-nvf" secondAttribute="trailing" constant="30" id="72d-G2-cZK"/>
                             <constraint firstItem="ERG-xd-auV" firstAttribute="centerX" secondItem="hi1-rJ-ii7" secondAttribute="centerX" id="9VK-cD-FqA"/>
                             <constraint firstItem="7Vf-yc-nvf" firstAttribute="top" secondItem="wsQ-3y-E6J" secondAttribute="bottom" constant="8" id="Drk-ed-R8l"/>
                             <constraint firstItem="ERG-xd-auV" firstAttribute="top" secondItem="7Vf-yc-nvf" secondAttribute="bottom" constant="20" id="FcA-bL-5E5"/>
+                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="JoK-un-dSQ" secondAttribute="trailing" constant="30" id="Gaf-0P-CX1"/>
                             <constraint firstItem="Rgr-LK-4wo" firstAttribute="centerY" secondItem="7Vf-yc-nvf" secondAttribute="centerY" id="L2J-LQ-h7X"/>
-                            <constraint firstItem="1G6-Hs-EPe" firstAttribute="trailing" secondItem="Kmh-vP-dD4" secondAttribute="trailing" constant="30" id="Ltr-bN-Ryc"/>
                             <constraint firstItem="Rgr-LK-4wo" firstAttribute="leading" secondItem="hi1-rJ-ii7" secondAttribute="leading" id="PXp-lZ-J0X"/>
                             <constraint firstItem="7Vf-yc-nvf" firstAttribute="centerX" secondItem="hi1-rJ-ii7" secondAttribute="centerX" id="PxV-Lf-N3E"/>
+                            <constraint firstItem="JoK-un-dSQ" firstAttribute="top" secondItem="1G6-Hs-EPe" secondAttribute="top" constant="50" id="QGm-P7-0iC"/>
                             <constraint firstItem="wsQ-3y-E6J" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="30" id="Wey-mc-jg0"/>
                             <constraint firstItem="ERG-xd-auV" firstAttribute="centerX" secondItem="Rgr-LK-4wo" secondAttribute="centerX" id="Wt8-e3-vVR"/>
                             <constraint firstItem="7Vf-yc-nvf" firstAttribute="centerY" secondItem="hi1-rJ-ii7" secondAttribute="centerY" id="bya-kg-LKm"/>
+                            <constraint firstItem="JoK-un-dSQ" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="30" id="ffT-8v-sjj"/>
                             <constraint firstItem="Rgr-LK-4wo" firstAttribute="top" secondItem="hi1-rJ-ii7" secondAttribute="top" id="iay-XM-P7g"/>
                             <constraint firstItem="ERG-xd-auV" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="35" id="nte-s4-Iul"/>
                             <constraint firstItem="7Vf-yc-nvf" firstAttribute="leading" secondItem="1G6-Hs-EPe" secondAttribute="leading" constant="30" id="oml-mT-z62"/>
-                            <constraint firstItem="Kmh-vP-dD4" firstAttribute="centerX" secondItem="hi1-rJ-ii7" secondAttribute="centerX" id="xh2-cQ-IoJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1G6-Hs-EPe"/>
                     </view>
@@ -368,6 +369,8 @@ Every puzzle has just one correct solution.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="7Vf-yc-nvf" id="OI4-e0-9T5"/>
+                        <outlet property="oneButton" destination="kjh-Ko-J4m" id="riy-0Q-Ix1"/>
+                        <outlet property="sudokuTextLabel" destination="JoK-un-dSQ" id="aEi-wW-AOh"/>
                         <outlet property="timerLabel" destination="TWe-JW-1Wb" id="gdB-lZ-0AU"/>
                         <outletCollection property="numberButtons" destination="kjh-Ko-J4m" collectionClass="NSMutableArray" id="B5d-QQ-FK5"/>
                         <outletCollection property="numberButtons" destination="hUa-U5-8XK" collectionClass="NSMutableArray" id="hgQ-D9-rWa"/>

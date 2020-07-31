@@ -14,6 +14,9 @@ class GameBoardViewController: UIViewController {
     @IBOutlet var numberButtons: [UIButton]!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var oneButton: UIButton!
+    @IBOutlet weak var sudokuTextLabel: UILabel!
+    
     
     let gameController = GameController()
     var timer: Timer?
@@ -51,8 +54,8 @@ class GameBoardViewController: UIViewController {
         collectionView.backgroundColor = .clear
         
         hidingNavigationBar()
-
         numberedButtonsCornerRadius()
+        addingShadow()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -195,6 +198,20 @@ class GameBoardViewController: UIViewController {
         }
         
         audioPlayer.play()
+    }
+    
+    private func addingShadow() {
+        sudokuTextLabel.layer.shadowColor = UIColor.black.cgColor
+        sudokuTextLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
+        sudokuTextLabel.layer.shadowRadius = 5
+        sudokuTextLabel.layer.shadowOpacity = 1.0
+        
+        for button in numberButtons {
+            button.layer.shadowColor = UIColor.black.cgColor
+            button.layer.shadowOffset = CGSize(width: 5, height: 5)
+            button.layer.shadowRadius = 5
+            button.layer.shadowOpacity = 1.0
+        }
     }
     
     /*

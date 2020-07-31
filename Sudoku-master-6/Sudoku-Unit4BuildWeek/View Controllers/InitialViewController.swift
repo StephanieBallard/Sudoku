@@ -14,18 +14,14 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var mediumButton: UIButton!
     @IBOutlet weak var hardButton: UIButton!
+    @IBOutlet weak var sudokuTextLabel: UILabel!
     
 //    var audioPlayer: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        navigationController?.navigationBar.barTintColor = .clear
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-//        playWinSound()
+        addingShadow()
         difficultyButtonsCornerRadii()
         
         
@@ -69,6 +65,28 @@ class InitialViewController: UIViewController {
     @IBAction func hardButtonTapped(_ sender: UIButton) {
     }
     
+    private func addingShadow() {
+        sudokuTextLabel.layer.shadowColor = UIColor.black.cgColor
+        sudokuTextLabel.layer.shadowOffset = CGSize(width: 5, height: 5)
+        sudokuTextLabel.layer.shadowRadius = 5
+        sudokuTextLabel.layer.shadowOpacity = 1.0
+        
+        easyButton.layer.shadowColor = UIColor.black.cgColor
+        easyButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+        easyButton.layer.shadowRadius = 4
+        easyButton.layer.shadowOpacity = 1.0
+        
+        mediumButton.layer.shadowColor = UIColor.black.cgColor
+        mediumButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+        mediumButton.layer.shadowRadius = 4
+        mediumButton.layer.shadowOpacity = 1.0
+        
+        hardButton.layer.shadowColor = UIColor.black.cgColor
+        hardButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+        hardButton.layer.shadowRadius = 4
+        hardButton.layer.shadowOpacity = 1.0
+    }
+
     /*
     // MARK: - Navigation
 
