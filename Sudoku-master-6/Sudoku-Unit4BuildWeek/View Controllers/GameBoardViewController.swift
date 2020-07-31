@@ -36,15 +36,16 @@ class GameBoardViewController: UIViewController {
         }
     }
     
+    // MARK: - Life Cycle Functions -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         startTimer()
-        timerLabel.text = dateFormatter.string(from: Date())
+        timer?.invalidate()
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.layer.cornerRadius = 3
+        collectionView.backgroundColor = .clear
         
         hidingNavigationBar()
 
@@ -54,6 +55,10 @@ class GameBoardViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         collectionView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer?.invalidate()
     }
     
     // MARK: - Number Button Actions -
@@ -118,12 +123,12 @@ class GameBoardViewController: UIViewController {
     
     // MARK: - Helper Methods -
     private func startTimer() {
-//        timer = Timer(fireAt: Date(), interval: 1, target: self, selector: timerLabel, userInfo: nil, repeats: true)
-    }
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
 
+    }
     
     private func updateTimer(timer: Timer) {
-        
+        timerLabel.text = dateFormatter.string(from: Date())
     }
     
     private func numberedButtonsCornerRadius() {
@@ -180,6 +185,6 @@ extension GameBoardViewController: UICollectionViewDelegate {
 
 extension GameBoardViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width / 9) - 1, height: (collectionView.bounds.width / 9) + 1)
+        return CGSize(width: (collectionView.bounds.width / 9) - 1, height: (collectionView.bounds.width / 9) - 1)
     }
 }

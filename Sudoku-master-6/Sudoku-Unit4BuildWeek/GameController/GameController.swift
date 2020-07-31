@@ -102,6 +102,8 @@ class GameController {
         let x = indexPath.item
         if gamePieces[y][x].number == nil {
             gamePieces[y][x].number = number
+        } else {
+            
         }
     }
 }

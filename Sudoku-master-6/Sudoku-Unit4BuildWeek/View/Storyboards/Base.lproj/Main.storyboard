@@ -288,8 +288,8 @@ Every puzzle has just one correct solution.</string>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-yc-nvf">
-                                <rect key="frame" x="30" y="271" width="354" height="354"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-yc-nvf">
+                                <rect key="frame" x="30" y="271" width="360" height="360"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Vf-yc-nvf" secondAttribute="height" multiplier="1:1" id="7aY-C6-LFa"/>
