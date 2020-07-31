@@ -15,13 +15,26 @@ class GameBoardViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     let gameController = GameController()
-    var timer: Timer?
-    var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "mm : ss"
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        return formatter
+    lazy var timer: Timer = {
+        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector ("fireTimer"), userInfo: nil, repeats: true)
+        return timer
+    }()
+    
+    @objc private func fireTimer() {
+        elapsedSeconds += 1
+        let timerText = "\(elapsedSeconds/60) : \(elapsedSeconds % 60)"
+        self.timerLabel.text = timerText
     }
+
+    var elapsedSeconds: Int = 0
+    
+        
+//    var dateFormatter: DateFormatter {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "mm : ss"
+//        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+//        return formatter
+//    }
     
     var indexPath: IndexPath? {
         didSet {
@@ -39,9 +52,7 @@ class GameBoardViewController: UIViewController {
     // MARK: - Life Cycle Functions -
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        startTimer()
-        timer?.invalidate()
+//        timer.invalidate()
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -55,10 +66,11 @@ class GameBoardViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         collectionView.reloadData()
+        startTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        timer?.invalidate()
+        timer.invalidate()
     }
     
     // MARK: - Number Button Actions -
@@ -131,21 +143,16 @@ class GameBoardViewController: UIViewController {
     
     
     // MARK: - Helper Methods -
+    private func startTimer() {
+        timer.invalidate()
+    }
+        
     private func checkFinnished() {
         if gameController.isFilled() {
             //Do Alert
             //Sound
             navigationController?.popViewController(animated: true)
         }
-    }
-    
-    private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
-
-    }
-    
-    private func updateTimer(timer: Timer) {
-        timerLabel.text = dateFormatter.string(from: Date())
     }
     
     private func numberedButtonsCornerRadius() {
